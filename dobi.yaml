@@ -23,11 +23,11 @@ mount=scripts:
 
 mount=kaldi-data:
     bind: ./kaldi-data/
-    path: /usr/local/kaldi/egs/mini_librispeech/s5/data/
+    path: /opt/kaldi/egs/mini_librispeech/s5/data/
 
 mount=kaldi-exp:
     bind: ./kaldi-exp/
-    path: /usr/local/kaldi/egs/mini_librispeech/s5/exp/
+    path: /opt/kaldi/egs/mini_librispeech/s5/exp/
 
 image=khoankeng:
     image: kaldiasr/kaldi:gpu-latest
