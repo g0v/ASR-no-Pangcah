@@ -1,0 +1,49 @@
+#
+# Build a minimal docker image for a static go binary.
+# See README.md for a full description.
+#
+
+meta:
+    project: pangcah-asr
+
+mount=jsonlines:
+    bind: ./jsonlines/
+    path: /jsonlines
+    read-only: true
+
+mount=mp3:
+    bind: ./mp3/
+    path: /mp3
+    read-only: true
+
+mount=scripts:
+    bind: ./scripts/
+    path: /scripts
+    read-only: true
+
+mount=kaldi-data:
+    bind: ./kaldi-data/
+    path: /usr/local/kaldi/egs/mini_librispeech/s5/data/
+
+mount=kaldi-exp:
+    bind: ./kaldi-exp/
+    path: /usr/local/kaldi/egs/mini_librispeech/s5/exp/
+
+image=khoankeng:
+    image: kaldiasr/kaldi:gpu-latest
+    pull: once
+
+job=sansing-kaldi-data:
+    use: khoankeng
+    mounts: [jsonlines, mp3, kaldi_data]
+
+job=gmm-alignment:
+    use: khoankeng
+    mounts: [mp3, kaldi_data, kaldi_exp]
+    command: |
+        bash -eux -c '
+            cp /scripts/run.sh .
+            bash -x run.sh
+    '
+
+
