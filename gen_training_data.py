@@ -6,6 +6,7 @@ import glob
 import codecs
 import json
 from mutagen.mp3 import MP3
+from amis_lint import remove_punc
 
 DATADIR = './mp3'
 TXT_FMT = 'Pangcah%05d %s'
@@ -32,12 +33,15 @@ for line in ami:
     for ex in lex['examples']:
         if ex['sentence'] is None:
             continue
+        if ex['sentence'].find(u'焦點') != -1:        # 原字典檔有誤
+            i += 1
+            continue
         txt = ex['sentence'].lower()
         print txt
         if ex['pronounce'] and ex['pronounce'].find('/') != -1:
             i += 1
             fn = ex['pronounce'].split('/')[-1]
-            print >> txt_fp, TXT_FMT % (i, txt)
+            print >> txt_fp, TXT_FMT % (i, remove_punc(txt))
             print >> wav_fp, WAV_FMT % (i, '../../mp3', fn)
             print >> seg_fp, SEG_FMT % (i, 0, mp3_len('%s/%s' % (DATADIR, fn)))
             print >> uut_fp, UUT_FMT % (i, i)
@@ -46,7 +50,7 @@ for line in ami:
         print txt
         i += 1
         fn = lex['pronounce'].split('/')[-1]
-        print >> txt_fp, TXT_FMT % (i, txt)
+        print >> txt_fp, TXT_FMT % (i, remove_punc(txt))
         print >> wav_fp, WAV_FMT % (i, '../../mp3', fn)
         print >> seg_fp, SEG_FMT % (i, 0, mp3_len('%s/%s' % (DATADIR, fn)))
         print >> uut_fp, UUT_FMT % (i, i)
