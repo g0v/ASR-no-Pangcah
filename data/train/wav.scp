@@ -5141,7 +5141,6 @@ Pangcah05140 ffmpeg -i "../../mp3/pakakoliciw_{1}_@_1.1.mp3" -f wav -ac 1 -ar 16
 Pangcah05141 ffmpeg -i "../../mp3/pakakoliciw_{1}.mp3" -f wav -ac 1 -ar 16000 pipe:1 | 
 Pangcah05142 ffmpeg -i "../../mp3/mipili'_{1}_@_1.1.mp3" -f wav -ac 1 -ar 16000 pipe:1 | 
 Pangcah05143 ffmpeg -i "../../mp3/mipili'_{1}.mp3" -f wav -ac 1 -ar 16000 pipe:1 | 
-Pangcah05144 ffmpeg -i "../../mp3/makalat_{1}_@_1.1.mp3" -f wav -ac 1 -ar 16000 pipe:1 | 
 Pangcah05145 ffmpeg -i "../../mp3/makalat_{1}.mp3" -f wav -ac 1 -ar 16000 pipe:1 | 
 Pangcah05146 ffmpeg -i "../../mp3/cahok_{1}.mp3" -f wav -ac 1 -ar 16000 pipe:1 | 
 Pangcah05147 ffmpeg -i "../../mp3/cakat_{1}.mp3" -f wav -ac 1 -ar 16000 pipe:1 | 
@@ -7281,9 +7280,7 @@ Pangcah07280 ffmpeg -i "../../mp3/mapohpoh_{1}_@_1.1.mp3" -f wav -ac 1 -ar 16000
 Pangcah07281 ffmpeg -i "../../mp3/mapohpoh_{1}.mp3" -f wav -ac 1 -ar 16000 pipe:1 | 
 Pangcah07282 ffmpeg -i "../../mp3/matateki'_{1}_@_1.1.mp3" -f wav -ac 1 -ar 16000 pipe:1 | 
 Pangcah07283 ffmpeg -i "../../mp3/matateki'_{1}.mp3" -f wav -ac 1 -ar 16000 pipe:1 | 
-Pangcah07284 ffmpeg -i "../../mp3/macalap_{1}_@_1.1.mp3" -f wav -ac 1 -ar 16000 pipe:1 | 
 Pangcah07285 ffmpeg -i "../../mp3/macalap_{1}.mp3" -f wav -ac 1 -ar 16000 pipe:1 | 
-Pangcah07286 ffmpeg -i "../../mp3/maenep_{1}_@_1.1.mp3" -f wav -ac 1 -ar 16000 pipe:1 | 
 Pangcah07287 ffmpeg -i "../../mp3/maenep_{1}.mp3" -f wav -ac 1 -ar 16000 pipe:1 | 
 Pangcah07288 ffmpeg -i "../../mp3/fa'owic_{1}.mp3" -f wav -ac 1 -ar 16000 pipe:1 | 
 Pangcah07289 ffmpeg -i "../../mp3/pakocira_{1}_@_1.1.mp3" -f wav -ac 1 -ar 16000 pipe:1 | 
@@ -10873,7 +10870,6 @@ Pangcah10872 ffmpeg -i "../../mp3/minanay_{1}_@_1.1.mp3" -f wav -ac 1 -ar 16000 
 Pangcah10873 ffmpeg -i "../../mp3/minanay_{1}.mp3" -f wav -ac 1 -ar 16000 pipe:1 | 
 Pangcah10874 ffmpeg -i "../../mp3/ahowid_{1}_@_1.1.mp3" -f wav -ac 1 -ar 16000 pipe:1 | 
 Pangcah10875 ffmpeg -i "../../mp3/ahowid_{1}.mp3" -f wav -ac 1 -ar 16000 pipe:1 | 
-Pangcah10876 ffmpeg -i "../../mp3/maala_{1}_@_1.1.mp3" -f wav -ac 1 -ar 16000 pipe:1 | 
 Pangcah10877 ffmpeg -i "../../mp3/maala_{1}.mp3" -f wav -ac 1 -ar 16000 pipe:1 | 
 Pangcah10878 ffmpeg -i "../../mp3/dapdap_{1}.mp3" -f wav -ac 1 -ar 16000 pipe:1 | 
 Pangcah10879 ffmpeg -i "../../mp3/dapo_{1}.mp3" -f wav -ac 1 -ar 16000 pipe:1 | 
