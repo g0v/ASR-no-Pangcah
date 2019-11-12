@@ -7,11 +7,11 @@ import codecs
 import json
 from mutagen.mp3 import MP3
 
-DATADIR = os.path.realpath('./mp3')
-TXT_FMT = 'Pangcah%04d %s'
-WAV_FMT = 'Pangcah%04d ffmpeg -i "%s/%s" -f wav -ac 1 -ar 16000 pipe:1 | '
-SEG_FMT = 'Pangcah%04d %d %d'
-UUT_FMT = 'Pangcah%04d Pangcah%04d'
+DATADIR = './mp3'
+TXT_FMT = 'Pangcah%05d %s'
+WAV_FMT = 'Pangcah%05d ffmpeg -i "%s/%s" -f wav -ac 1 -ar 16000 pipe:1 | '
+SEG_FMT = 'Pangcah%05d %d %d'
+UUT_FMT = 'Pangcah%05d Pangcah%05d'
 
 txt_fp = codecs.open('./data/train/text', 'w', encoding='UTF-8')
 wav_fp = codecs.open('./data/train/wav.scp', 'w', encoding='UTF-8')
@@ -38,7 +38,7 @@ for line in ami:
             i += 1
             fn = ex['pronounce'].split('/')[-1]
             print >> txt_fp, TXT_FMT % (i, txt)
-            print >> wav_fp, WAV_FMT % (i, DATADIR, fn)
+            print >> wav_fp, WAV_FMT % (i, '../../mp3', fn)
             print >> seg_fp, SEG_FMT % (i, 0, mp3_len('%s/%s' % (DATADIR, fn)))
             print >> uut_fp, UUT_FMT % (i, i)
     if lex['pronounce'] and lex['pronounce'].find('/') != -1:
@@ -47,7 +47,7 @@ for line in ami:
         i += 1
         fn = lex['pronounce'].split('/')[-1]
         print >> txt_fp, TXT_FMT % (i, txt)
-        print >> wav_fp, WAV_FMT % (i, DATADIR, fn)
+        print >> wav_fp, WAV_FMT % (i, '../../mp3', fn)
         print >> seg_fp, SEG_FMT % (i, 0, mp3_len('%s/%s' % (DATADIR, fn)))
         print >> uut_fp, UUT_FMT % (i, i)
 
